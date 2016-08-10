@@ -7,10 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 5.times do
-  Restaurant.create(name: Faker::Space.company, address: Faker::Address.street_address, phone_number: Faker::PhoneNumber.phone_number, category: Restaurant::TYPE.sample)
+  rest = Restaurant.create!(name: Faker::Space.company, address: Faker::Address.street_address, phone_number: Faker::PhoneNumber.phone_number, category: Restaurant::TYPE.sample)
 
   3.times do
-    Review.create(content: Faker::ChuckNorris.fact, rating: [0..5].sample)
+    rest.reviews.create!(content: Faker::ChuckNorris.fact, rating: (0..5).to_a.sample)
   end
-
 end
