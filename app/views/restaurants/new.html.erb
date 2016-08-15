@@ -3,5 +3,5 @@
   <%= r.input :address %>
   <%= r.input :phone_number %>
   <%= r.input :category, collection: Restaurant::TYPE %>
-  <%= r.submit %>
+  <%= r.button :submit, "Create Restaurant", class: "btn btn-primary" %>
 <% end %>
